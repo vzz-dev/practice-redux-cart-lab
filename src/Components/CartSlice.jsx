@@ -8,7 +8,7 @@ const initialState = {
 
 const CartSlice = createSlice ({
   name: 'cart',
-  initialState,
+  initialState, 
   reducers: {
 
     addItemToCart(state, action) {
@@ -38,14 +38,31 @@ const CartSlice = createSlice ({
         }
     },
       
-    decreaseItemQuantiy(state, action) {}
+    decreaseItemQuantity(state, action) {
+      const itemToDecrease = state.cartItems.find(item => item.id === action.payload);
+      if (itemToDecrease && itemToDecrease.quantity > 1) {
+        itemToDecrease.quantity -= 1;
+      }
+
+    },
+
+  }
+});
+
+export const {
+  addItemToCart,
+  removeItemFromCart,
+  clearCart,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+} = CartSlice.actions;
+export default CartSlice.reducer;
+  
 
 
 
       
         
-  }
-});
     
 
 
