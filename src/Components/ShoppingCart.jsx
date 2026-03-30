@@ -38,7 +38,7 @@ return (
               <div className="quantity-controls">
                 <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
                 <span> {item.quantity}</span>
-                <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                <button onClick={() => handleIncreaseItemQuantity(item.id)}>+</button>
               </div>
               <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Eliminar</button>
             </li>
